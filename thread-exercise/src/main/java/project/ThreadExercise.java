@@ -8,6 +8,7 @@ public class ThreadExercise
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SleepingThread thread1 = new SleepingThread(5);
+        thread1.start();
     }
 }
