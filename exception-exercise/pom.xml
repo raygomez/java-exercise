@@ -3,28 +3,22 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>project</groupId>
-  <artifactId>java-exercise</artifactId>
+  <artifactId>exception-exercise</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+  <packaging>jar</packaging>
 
-  <name>exercise</name>
+  <name>exception-exercise</name>
   <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <modules>
-    <module>character-shifter</module>
-    <module>shape-exercise</module>
-    <module>exception-exercise</module>
-  </modules>
-
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
