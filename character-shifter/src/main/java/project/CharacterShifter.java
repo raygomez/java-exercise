@@ -13,7 +13,7 @@ public class CharacterShifter
         try {
             content = new String(Files.readAllBytes(Paths.get(filename)));
         } catch(IOException exp){
-            //System.out.prinln("Unable to read file.");
+            System.out.println("Unable to read file.");
         }
         System.out.println(content);
     }
