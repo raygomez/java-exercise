@@ -1,29 +1,36 @@
 package project;
 
-import java.io.IOException;
-import java.lang.System;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.io.*;
 
 public class CharacterShifter
 {
 
-    void shift(String filename) {
-        String content = "";
+    void shift(String input, String output, int offset) {
         try {
-            content = new String(Files.readAllBytes(Paths.get(filename)));
-        } catch(IOException exp){
-            System.out.println("Unable to read file.");
-        }
-        System.out.println(content);
-    }
+            BufferedReader reader = new BufferedReader(new FileReader(input));
+            Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output)));
+            String line;
 
+            while ((line = reader.readLine()) != null) {
+
+                for (int i = 0; i < line.length(); i++) {
+                    writer.write((char) (line.charAt(i) + offset));
+                }
+                writer.write('\n');
+            }
+
+            reader.close();
+            writer.close();
+
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     public static void main( String[] args )
     {
         CharacterShifter shifter =  new CharacterShifter();
-
-        System.out.println(System.getProperty("user.dir"));
-
+        shifter.shift("input.txt", "output.txt", 3);
     }
 }
