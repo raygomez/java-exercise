@@ -16,6 +16,7 @@
 
   <modules>
     <module>character-shifter</module>
+    <module>shape-exercise</module>
   </modules>
 
   <dependencies>
