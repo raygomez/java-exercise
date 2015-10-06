@@ -18,6 +18,7 @@
     <module>character-shifter</module>
     <module>shape-exercise</module>
     <module>exception-exercise</module>
+    <module>tic-tac-toe</module>
   </modules>
 
   <dependencies>
