@@ -19,6 +19,7 @@
     <module>shape-exercise</module>
     <module>exception-exercise</module>
     <module>tic-tac-toe</module>
+    <module>thread-exercise</module>
   </modules>
 
   <dependencies>
