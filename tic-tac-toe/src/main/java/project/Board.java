@@ -2,12 +2,12 @@ package project;
 
 public class Board {
 
-    char [][] board = {{'-','-','-'},{'-','-','-'},{'-','-','-'}};
+    char [][] board = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 
      boolean isFull(){
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++ ){
-                if(board[i][j] == '-') return false;
+                if(board[i][j] == ' ') return false;
             }
         }
         return true;
@@ -19,14 +19,15 @@ public class Board {
 
 
     boolean isValidTurn(Turn turn){
-        return board[turn.row][turn.column] == '-';
+        return board[turn.row][turn.column] == ' ';
     }
 
     void display(){
-        System.out.println("Board:");
-        System.out.println("" + board[0][0] + board[0][1] + board[0][2]);
-        System.out.println("" + board[1][0] + board[1][1] + board[1][2]);
-        System.out.println("" + board[2][0] + board[2][1] + board[2][2]);
+        System.out.println("=============");
+        System.out.println("| " + board[0][0] + " | " + board[0][1] + " | " + board[0][2] + " |");
+        System.out.println("| " + board[1][0] + " | " + board[1][1] + " | " + board[1][2] + " |");
+        System.out.println("| " + board[2][0] + " | " + board[2][1] + " | " + board[2][2] + " |");
+        System.out.println("=============\n");
     }
 
 
@@ -36,7 +37,7 @@ public class Board {
 //        [1,0][1,1][1,2]
 //        [2,0][2,1][2,2]
         char scan = board[0][0];
-        if (scan != '-') {
+        if (scan != ' ') {
             if(board[0][0] == board[0][1] && board[0][0] == board[0][2]) {
                 return true;
             }
@@ -49,7 +50,7 @@ public class Board {
         }
 
         scan = board[1][1];
-        if (scan != '-'){
+        if (scan != ' '){
             if(board[1][0] == board[1][1] && board[1][0] == board[1][2]) {
                 return true;
             }
@@ -62,7 +63,7 @@ public class Board {
         }
 
         scan = board[2][2];
-        if (scan != '-'){
+        if (scan != ' '){
             if(board[2][0] == board[2][1] && board[2][0] == board[2][2]) {
                 return true;
             }
