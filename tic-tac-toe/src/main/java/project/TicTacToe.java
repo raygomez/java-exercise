@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class TicTacToe
 {
 
-    private char winner;
     private char currentPlayer;
     private Board board = new Board();
 
@@ -21,11 +20,12 @@ public class TicTacToe
 
         while((winner == '-') && !board.isFull()) {
 
-            int row = Integer.parseInt(userInput.next());
-            int column = Integer.parseInt(userInput.next());
+            Turn turn = new Turn();
+            turn.row = Integer.parseInt(userInput.next());
+            turn.column = Integer.parseInt(userInput.next());
 
-            if(board.isEmpty(row, column)){
-                board.set(currentPlayer, row, column);
+            if(board.isEmpty(turn)){
+                board.set(currentPlayer, turn);
                 board.display();
                 if(board.hasWinner()){
                     winner = currentPlayer;

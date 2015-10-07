@@ -4,10 +4,6 @@ public class Board {
 
     char [][] board = {{'-','-','-'},{'-','-','-'},{'-','-','-'}};
 
-    public Board(){
-
-    }
-
      boolean isFull(){
         for(int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++ ){
@@ -17,12 +13,13 @@ public class Board {
         return true;
     }
 
-    void set(char player, int row, int column){
-        board[row][column] = player;
+    void set(char player, Turn turn){
+        board[turn.row][turn.column] = player;
     }
 
-    boolean isEmpty(int row, int column){
-        return board[row][column] == '-';
+
+    boolean isEmpty(Turn turn){
+        return board[turn.row][turn.column] == '-';
     }
 
     void display(){
