@@ -1,6 +1,7 @@
 package project;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class TicTacToe
 {
@@ -15,7 +16,7 @@ public class TicTacToe
         initializePlayer1();
         initializePlayer2();
 
-        getFirstPlayer();
+        selectFirstPlayer();
 
         while((winner == null) && !board.isFull()) {
             announcePlayerTurn();
@@ -40,7 +41,7 @@ public class TicTacToe
 
     }
 
-    private void getFirstPlayer() {
+    private void selectFirstPlayer() {
         Random random = new Random();
         currentPlayer = random.nextBoolean() ? players[0] : players[1];
         System.out.format("%s is the first player.\n", currentPlayer.getName());
@@ -49,17 +50,28 @@ public class TicTacToe
     private void initializePlayer1() {
         Player p1 = new Player();
         p1.setStrategy(new HumanInputStrategy());
-        p1.setSign('O');
+        getPreferredSign(p1);
         p1.setName("Player 1");
         players[0] = p1;
+    }
+
+    private void getPreferredSign(Player p1) {
+
+        System.out.print("Please select your sign [X or O]: ");
+        Scanner userInput = new Scanner(System.in);
+        p1.setSign(userInput.next().charAt(0));
     }
 
     private void initializePlayer2() {
         Player p2 = new Player();
         p2.setStrategy(new ComputerInputStrategy(board));
-        p2.setSign('X');
+        p2.setSign(getComputerSign());
         p2.setName("Computer");
         players[1] = p2;
+    }
+
+    private char getComputerSign() {
+        return players[0].getSign() == 'X' ? 'O' : 'X';
     }
 
 
