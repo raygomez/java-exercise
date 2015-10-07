@@ -46,14 +46,6 @@ public class TicTacToe
         System.out.format("%s is the first player.\n", currentPlayer.getName());
     }
 
-    private void initializePlayer2() {
-        Player p2 = new Player();
-        p2.setStrategy(new HumanInputStrategy());
-        p2.setSign('X');
-        p2.setName("Player 2");
-        players[1] = p2;
-    }
-
     private void initializePlayer1() {
         Player p1 = new Player();
         p1.setStrategy(new HumanInputStrategy());
@@ -61,6 +53,15 @@ public class TicTacToe
         p1.setName("Player 1");
         players[0] = p1;
     }
+
+    private void initializePlayer2() {
+        Player p2 = new Player();
+        p2.setStrategy(new ComputerInputStrategy(board));
+        p2.setSign('X');
+        p2.setName("Computer");
+        players[1] = p2;
+    }
+
 
     private void announcePlayerTurn() {
         System.out.format("It is %s's turn.\n", currentPlayer.getName());
