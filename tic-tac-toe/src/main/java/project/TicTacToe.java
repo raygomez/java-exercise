@@ -1,7 +1,5 @@
 package project;
 
-import java.util.Scanner;
-
 public class TicTacToe
 {
 
@@ -14,15 +12,16 @@ public class TicTacToe
         char human2 = 'O';
         char winner = '-';
 
-        Scanner userInput = new Scanner(System.in);
 
         currentPlayer = 'X';
 
+        Player p1 = new Player();
+        p1.setStrategy(new HumanInputStrategy());
+
+
         while((winner == '-') && !board.isFull()) {
 
-            Turn turn = new Turn();
-            turn.row = Integer.parseInt(userInput.next());
-            turn.column = Integer.parseInt(userInput.next());
+            Turn turn = p1.getTurn();
 
             if(board.isEmpty(turn)){
                 board.set(currentPlayer, turn);
