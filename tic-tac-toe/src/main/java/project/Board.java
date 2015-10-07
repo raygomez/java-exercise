@@ -18,7 +18,7 @@ public class Board {
     }
 
 
-    boolean isEmpty(Turn turn){
+    boolean isValidTurn(Turn turn){
         return board[turn.row][turn.column] == '-';
     }
 
