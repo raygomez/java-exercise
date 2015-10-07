@@ -17,6 +17,9 @@ public class Board {
         board[turn.row][turn.column] = player;
     }
 
+    public void set(char player, int row, int column){
+        board[row][column] = player;
+    }
 
     public boolean isValidTurn(Turn turn){
         return board[turn.row][turn.column] == ' ';
