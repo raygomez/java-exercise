@@ -67,8 +67,8 @@ public class TicTacToe
 
     private void initializePlayer2() {
         Player p2 = new Player();
-        p2.setStrategy(new ComputerInputStrategy(board));
         p2.setSign(getComputerSign());
+        p2.setStrategy(new ComputerInputStrategy(board, p2.getSign()));
         p2.setName("Computer");
         players[1] = p2;
     }

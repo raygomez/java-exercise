@@ -74,4 +74,8 @@ public class Board {
 
         return false;
     }
+
+    public char getSign(int row, int column) {
+        return board[row][column];
+    }
 }

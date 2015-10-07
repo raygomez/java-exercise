@@ -2,18 +2,23 @@ package inputStrategy;
 
 import GameStrategy.FindFirstEmptyTile;
 import GameStrategy.GameStrategy;
+import GameStrategy.GoForTheWinStrategy;
 import project.Board;
 import project.Turn;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ComputerInputStrategy implements InputStrategy {
 
     private Board board;
-    private ArrayList<GameStrategy> strategies = new ArrayList<GameStrategy>();
+    private char sign;
+    private List<GameStrategy> strategies = new ArrayList<GameStrategy>();
 
-    public ComputerInputStrategy(Board board){
+    public ComputerInputStrategy(Board board, char sign){
         this.board = board;
+        this.sign = sign;
+        strategies.add(new GoForTheWinStrategy(board, sign));
         strategies.add(new FindFirstEmptyTile(board));
     }
 
