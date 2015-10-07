@@ -24,22 +24,20 @@ public class GoForTheWinStrategy implements GameStrategy{
                 tile.column = j;
 
                 if(board.isValidTurn(tile)){
-                    int left = i > 0  ? i - 1 : 2;
-                    int right = i == 2 ? 0 : i + 1;
+                    int left = j > 0  ? j - 1 : 2;
+                    int right = j == 2 ? 0 : j + 1;
 
                     if((board.getSign(tile.row, left) == this.sign) &&
                             (board.getSign(tile.row, right) == this.sign)) {
-                        System.out.println("" + left + ","+ right);
                         solved = true;
                         return tile;
                     }
 
-                    int up = j > 0 ? i - i : 2;
-                    int down = j == 2 ? 0 : j + 1;
+                    int up = i > 0 ? i - 1 : 2;
+                    int down = i == 2 ? 0 : i + 1;
 
                     if((board.getSign(up, tile.column) == this.sign) &&
                             (board.getSign(down, tile.column) == this.sign)) {
-                        System.out.println("" + up + ","+ down);
                         solved = true;
                         return tile;
                     }
