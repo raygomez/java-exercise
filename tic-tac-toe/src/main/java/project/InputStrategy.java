@@ -1,6 +1,6 @@
 package project;
 
-public interface Strategy {
+public interface InputStrategy {
 
     Turn execute();
 }
