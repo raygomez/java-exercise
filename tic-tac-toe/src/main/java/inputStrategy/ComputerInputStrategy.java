@@ -1,28 +1,33 @@
 package inputStrategy;
 
+import GameStrategy.FindFirstEmptyTile;
+import GameStrategy.GameStrategy;
 import project.Board;
 import project.Turn;
+
+import java.util.ArrayList;
 
 public class ComputerInputStrategy implements InputStrategy {
 
     private Board board;
+    private ArrayList<GameStrategy> strategies = new ArrayList<GameStrategy>();
 
     public ComputerInputStrategy(Board board){
         this.board = board;
+        strategies.add(new FindFirstEmptyTile(board));
     }
 
     public Turn execute() {
-        Turn turn = new Turn();
 
-        for(int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
-                turn.row = i;
-                turn.column = j;
-                if (board.isValidTurn(turn))
-                    return turn;
+        Turn turn = null;
+        for (GameStrategy s: strategies) {
+            turn = s.execute();
+            if(s.isSolved()) {
+                break;
             }
         }
 
-        throw new RuntimeException("No possible turn");
+        if(turn != null) return turn;
+        throw new RuntimeException("No possible turn.");
     }
 }
