@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class TicTacToe
 {
-    static char winner;
-    static char currentPlayer;
-    static Board board = new Board();
 
-    public static void main( String[] args )
-    {
+    private char winner;
+    private char currentPlayer;
+    private Board board = new Board();
+
+    public void start() {
+
         char human1 = 'X';
         char human2 = 'O';
         char winner = '-';
@@ -32,7 +33,7 @@ public class TicTacToe
                     currentPlayer = nextPlayer();
                 }
 
-             } else {
+            } else {
                 System.out.println("Invalid input");
             }
         }
@@ -41,9 +42,17 @@ public class TicTacToe
         } else {
             System.out.println("It's a draw.");
         }
+
     }
 
-    static char nextPlayer() {
+
+    public static void main( String[] args )
+    {
+        TicTacToe ttt = new TicTacToe();
+        ttt.start();
+    }
+
+    public char nextPlayer() {
         return currentPlayer == 'O' ? 'X' : 'O';
     }
 }
