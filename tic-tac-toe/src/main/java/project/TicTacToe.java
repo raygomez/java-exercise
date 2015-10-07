@@ -43,7 +43,7 @@ public class TicTacToe
     }
 
     private void announceWinner() {
-        System.out.println("Winner is:" + winner.getName());
+        System.out.format("Winner is %s.\n" + winner.getName());
     }
 
     private void announceDraw() {
