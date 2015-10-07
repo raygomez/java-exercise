@@ -1,11 +1,13 @@
 package project;
 
+import java.util.Random;
+
 public class TicTacToe
 {
 
     private Board board = new Board();
     Player players[]= new Player[2];
-    Player player = null;
+    Player currentPlayer = null;
     Player winner = null;
 
     public void start() {
@@ -13,18 +15,18 @@ public class TicTacToe
         initializePlayer1();
         initializePlayer2();
 
-        player = players[1];
+        getFirstPlayer();
 
         while((winner == null) && !board.isFull()) {
             announcePlayerTurn();
-            Turn turn = player.getTurn();
+            Turn turn = currentPlayer.getTurn();
             if(board.isValidTurn(turn)){
-                board.set(player.getSign(), turn);
+                board.set(currentPlayer.getSign(), turn);
                 board.display();
                 if(board.hasWinner()){
-                    winner = player;
+                    winner = currentPlayer;
                 } else {
-                    player = getNextPlayer();
+                    currentPlayer = getNextPlayer();
                 }
             } else {
                 logInvalidTurn(turn);
@@ -38,16 +40,10 @@ public class TicTacToe
 
     }
 
-    private void logInvalidTurn(Turn turn) {
-        System.out.format("Invalid input: %d %d\n", turn.row, turn.column);
-    }
-
-    private void announceWinner() {
-        System.out.format("Winner is %s.\n" + winner.getName());
-    }
-
-    private void announceDraw() {
-        System.out.println("It's a draw.");
+    private void getFirstPlayer() {
+        Random random = new Random();
+        currentPlayer = random.nextBoolean() ? players[0] : players[1];
+        System.out.format("%s is the first player.\n", currentPlayer.getName());
     }
 
     private void initializePlayer2() {
@@ -67,7 +63,19 @@ public class TicTacToe
     }
 
     private void announcePlayerTurn() {
-        System.out.format("It is %s's turn\n", player.getName());
+        System.out.format("It is %s's turn.\n", currentPlayer.getName());
+    }
+
+    private void logInvalidTurn(Turn turn) {
+        System.out.format("Invalid input: %d %d\n", turn.row, turn.column);
+    }
+
+    private void announceWinner() {
+        System.out.format("Winner is %s.\n", winner.getName());
+    }
+
+    private void announceDraw() {
+        System.out.println("It's a draw.");
     }
 
     private boolean hasWinner() {
@@ -75,6 +83,6 @@ public class TicTacToe
     }
 
     public Player getNextPlayer() {
-        return player == players[0] ? players[1] : players[0];
+        return currentPlayer == players[0] ? players[1] : players[0];
     }
 }
