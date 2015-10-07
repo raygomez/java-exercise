@@ -1,5 +1,7 @@
 package project;
 
+import inputStrategy.InputStrategy;
+
 public class Player {
 
     private InputStrategy strategy;

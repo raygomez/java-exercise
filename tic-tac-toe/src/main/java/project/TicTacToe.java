@@ -1,5 +1,8 @@
 package project;
 
+import inputStrategy.ComputerInputStrategy;
+import inputStrategy.HumanInputStrategy;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -76,7 +79,7 @@ public class TicTacToe
 
 
     private void announcePlayerTurn() {
-        System.out.format("It is %s's turn.\n", currentPlayer.getName());
+        System.out.format("It is %s's turn.\n\n", currentPlayer.getName());
     }
 
     private void logInvalidTurn(Turn turn) {

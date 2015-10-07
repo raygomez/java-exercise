@@ -1,4 +1,7 @@
-package project;
+package inputStrategy;
+
+import project.Board;
+import project.Turn;
 
 public class ComputerInputStrategy implements InputStrategy {
 

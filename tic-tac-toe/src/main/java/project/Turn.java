@@ -2,7 +2,7 @@ package project;
 
 public class Turn {
 
-    int row;
-    int column;
+    public int row;
+    public int column;
 
 }

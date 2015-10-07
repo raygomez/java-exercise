@@ -1,4 +1,6 @@
-package project;
+package inputStrategy;
+
+import project.Turn;
 
 public interface InputStrategy {
 

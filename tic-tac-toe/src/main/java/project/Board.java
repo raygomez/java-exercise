@@ -18,7 +18,7 @@ public class Board {
     }
 
 
-    boolean isValidTurn(Turn turn){
+    public boolean isValidTurn(Turn turn){
         return board[turn.row][turn.column] == ' ';
     }
 

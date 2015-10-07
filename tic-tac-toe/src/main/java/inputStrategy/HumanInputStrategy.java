@@ -1,4 +1,6 @@
-package project;
+package inputStrategy;
+
+import project.Turn;
 
 import java.util.Scanner;
 
