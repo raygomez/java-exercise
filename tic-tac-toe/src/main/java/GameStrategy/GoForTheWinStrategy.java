@@ -46,6 +46,22 @@ public class GoForTheWinStrategy implements GameStrategy{
             }
         }
 
+        for(int i = 0; i < 3; i++) {
+            tile.row = i;
+            tile.column = i;
+
+            if(board.isValidTurn(tile)) {
+                int ne = i > 0 ? i - 1 : 2;
+                int sw = i == 2 ? 0 : i + 1;
+
+                if((board.getSign(ne, ne) == this.sign) &&
+                        (board.getSign(sw, sw) == this.sign)) {
+                    solved = true;
+                    return tile;
+                }
+            }
+        }
+
         return null;
     }
 
