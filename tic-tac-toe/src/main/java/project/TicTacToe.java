@@ -65,7 +65,7 @@ public class TicTacToe
 
         char sign;
         while(true) {
-            String input = userInput.next();
+            String input = userInput.nextLine();
 
             if(input.length() == 1) {
                 sign = input.charAt(0);
