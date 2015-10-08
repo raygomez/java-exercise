@@ -95,11 +95,14 @@ public class GoForTheWinStrategyTest {
 
             if(board.isValidTurn(tile)) {
 
-                int neR = i > 0 ? (i) - 1 : 2;
-                int neC = 2 - i == 2 ? 0 : 2 - i + 1;
+                int row = tile.row;
+                int col = tile.column;
 
-                int swR = i == 2 ? 0 : i + 1;
-                int swC = 2 - i > 0 ? (2-i) - 1 : 2;
+                int neR = row > 0 ? row - 1 : 2;
+                int neC = col == 2 ? 0 : col + 1;
+
+                int swR = row == 2 ? 0 : row + 1;
+                int swC = col > 0 ? col - 1 : 2;
 
                 System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", tile.row, tile.column, neR, neC, swR, swC);
 
