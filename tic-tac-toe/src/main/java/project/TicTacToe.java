@@ -21,7 +21,7 @@ public class TicTacToe
 
         selectFirstPlayer();
 
-        while((winner == null) && !board.isFull()) {
+        while(!hasWinner() && !board.isFull()) {
             announcePlayerTurn();
             Turn turn = currentPlayer.getTurn();
             if(board.isValidTurn(turn)){
