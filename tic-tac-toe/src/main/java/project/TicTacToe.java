@@ -53,16 +53,17 @@ public class TicTacToe
     private void initializeHumanPlayer() {
         Player p1 = new Player();
         p1.setStrategy(new HumanInputStrategy());
-        getPreferredSign(p1);
+        p1.setSign(getPreferredSign());
         p1.setName("Player 1");
         players[0] = p1;
     }
 
-    private void getPreferredSign(Player p1) {
+    private char getPreferredSign() {
 
         System.out.print("Please select your sign [X or O]: ");
         Scanner userInput = new Scanner(System.in);
-        p1.setSign(userInput.next().charAt(0));
+
+        return userInput.next().charAt(0);
     }
 
     private void initializeComputerPlayer() {
