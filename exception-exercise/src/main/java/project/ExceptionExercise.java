@@ -1,10 +1,6 @@
 package project;
 
-/**
- * Hello world!
- *
- */
-public class ExceptionExercise
+class ExceptionExercise
 {
     public static void main( String[] args )
     {

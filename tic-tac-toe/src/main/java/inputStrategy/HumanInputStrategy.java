@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class HumanInputStrategy implements InputStrategy {
 
-    Scanner userInput = new Scanner(System.in);
+    private final Scanner userInput = new Scanner(System.in);
 
     public Turn execute() {
 

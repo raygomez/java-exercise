@@ -4,8 +4,8 @@
              xsi:schemaLocation="http://maven.apache.org/PROFILES/1.0.0 http://maven.apache.org/xsd/profiles-1.0.0.xsd">
     <profiles>
         <profile>
-            <id></id>
-            
+            <id>mine</id>
+
         </profile>
     </profiles>
 </profilesXml>

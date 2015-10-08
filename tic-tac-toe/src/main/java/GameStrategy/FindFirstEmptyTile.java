@@ -6,7 +6,7 @@ import project.Turn;
 public class FindFirstEmptyTile implements GameStrategy {
 
     private boolean solved = false;
-    private Board board;
+    private final Board board;
 
     public FindFirstEmptyTile(Board board) {
         this.board = board;

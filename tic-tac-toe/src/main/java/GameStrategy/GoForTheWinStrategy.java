@@ -6,8 +6,8 @@ import project.Turn;
 public class GoForTheWinStrategy implements GameStrategy{
 
     private boolean solved = false;
-    private Board board;
-    private char sign;
+    private final Board board;
+    private final char sign;
 
     public GoForTheWinStrategy(Board board, char sign){
         this.board = board;

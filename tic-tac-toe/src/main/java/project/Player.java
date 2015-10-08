@@ -2,7 +2,7 @@ package project;
 
 import inputStrategy.InputStrategy;
 
-public class Player {
+class Player {
 
     private InputStrategy strategy;
     private char sign;

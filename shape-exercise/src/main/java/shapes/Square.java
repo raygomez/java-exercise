@@ -2,7 +2,7 @@ package shapes;
 
 public class Square implements Shape {
 
-    double side;
+    private final double side;
 
     public Square(double side) {
         this.side = side;

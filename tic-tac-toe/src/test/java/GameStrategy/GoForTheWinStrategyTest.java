@@ -12,8 +12,8 @@ import static org.junit.Assert.*;
 public class GoForTheWinStrategyTest {
 
 
-    Board board;
-    GoForTheWinStrategy strategy;
+    private Board board;
+    private GoForTheWinStrategy strategy;
 
     @Before
     public void setUp(){
@@ -97,19 +97,4 @@ public class GoForTheWinStrategyTest {
 
     }
 
-    @Test
-    public void f(){
-
-        Turn tile = new Turn();
-        for(int i = 0; i < 3; i++) {
-            tile.row = i;
-            tile.column = 2 - i;
-
-//            if(board.isValidTurn(tile)) {
-//                System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", tile.row, tile.column, neR, neC, swR, swC);
-//
-//            }
-
-        }
-    }
 }

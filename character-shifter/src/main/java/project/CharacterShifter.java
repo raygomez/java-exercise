@@ -2,10 +2,10 @@ package project;
 
 import java.io.*;
 
-public class CharacterShifter
+class CharacterShifter
 {
 
-    void shift(String input, String output, int offset) {
+    private void shift(String input, String output, int offset) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(input));
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(output)));

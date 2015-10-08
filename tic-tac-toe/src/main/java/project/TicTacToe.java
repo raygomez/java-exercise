@@ -6,13 +6,13 @@ import inputStrategy.HumanInputStrategy;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TicTacToe
+class TicTacToe
 {
 
-    private Board board = new Board();
-    Player players[]= new Player[2];
-    Player currentPlayer = null;
-    Player winner = null;
+    private final Board board = new Board();
+    private final Player[] players= new Player[2];
+    private Player currentPlayer = null;
+    private Player winner = null;
 
     public void start() {
 
@@ -110,7 +110,7 @@ public class TicTacToe
         return winner != null;
     }
 
-    public Player getNextPlayer() {
+    private Player getNextPlayer() {
         return currentPlayer == players[0] ? players[1] : players[0];
     }
 }

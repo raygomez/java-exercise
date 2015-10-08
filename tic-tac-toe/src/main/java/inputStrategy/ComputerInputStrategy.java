@@ -13,7 +13,7 @@ import java.util.List;
 
 public class ComputerInputStrategy implements InputStrategy {
 
-    private List<GameStrategy> strategies = new ArrayList<GameStrategy>();
+    private final List<GameStrategy> strategies = new ArrayList<GameStrategy>();
 
     public ComputerInputStrategy(Board board, char sign){
         strategies.add(new GoForTheWinStrategy(board, sign));

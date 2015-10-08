@@ -2,8 +2,8 @@ package shapes;
 
 public class Rectangle implements Shape{
 
-    double length;
-    double height;
+    private final double length;
+    private final double height;
 
     public Rectangle(double length, double height) {
         this.length = length;

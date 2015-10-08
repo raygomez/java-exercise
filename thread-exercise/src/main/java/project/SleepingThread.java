@@ -1,11 +1,9 @@
 package project;
 
-import static java.lang.Thread.sleep;
+class SleepingThread extends Thread{
 
-public class SleepingThread extends Thread{
-
-    int time;
-    String name;
+    private int time;
+    private final String name;
 
     public SleepingThread(String name, int sleepTime){
         this.time = sleepTime;

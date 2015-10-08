@@ -1,10 +1,6 @@
 package project;
 
-/**
- * Hello world!
- *
- */
-public class ThreadExercise
+class ThreadExercise
 {
     public static void main( String[] args )
     {

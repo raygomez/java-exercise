@@ -2,7 +2,7 @@ package project;
 
 public class Board {
 
-    char [][] board = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
+    private final char [][] board = {{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
 
     public boolean isFull(){
         for(int i = 0; i < 3; i++){

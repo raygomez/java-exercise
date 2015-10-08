@@ -2,11 +2,7 @@ package project;
 
 import shapes.*;
 
-/**
- * Hello world!
- *
- */
-public class ShapeExercise
+class ShapeExercise
 {
     public static void main( String[] args )
     {

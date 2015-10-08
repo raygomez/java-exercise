@@ -4,8 +4,8 @@ import shapes.Shape;
 
 public class Triangle implements Shape {
 
-    double height;
-    double width;
+    private final double height;
+    private final double width;
 
     public Triangle(double height, double width) {
         this.height = height;
