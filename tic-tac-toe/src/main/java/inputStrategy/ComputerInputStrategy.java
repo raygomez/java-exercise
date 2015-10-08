@@ -18,7 +18,6 @@ public class ComputerInputStrategy implements InputStrategy {
     public ComputerInputStrategy(Board board, char sign){
         strategies.add(new GoForTheWinStrategy(board, sign));
         strategies.add(new AvoidCertainLossStrategy(board, getOtherSign(sign)));
-
         strategies.add(new FindFirstEmptyTile(board));
     }
 
