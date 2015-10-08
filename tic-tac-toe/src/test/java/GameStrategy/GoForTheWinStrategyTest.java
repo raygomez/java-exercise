@@ -86,15 +86,22 @@ public class GoForTheWinStrategyTest {
     @Test
     public void f(){
 
+
+        //0,2 : 1,1 : 2,0
         Turn tile = new Turn();
         for(int i = 0; i < 3; i++) {
             tile.row = i;
-            tile.column = i;
+            tile.column = 2 - i;
 
             if(board.isValidTurn(tile)) {
-                int ne = i > 0 ? i - 1 : 2;
-                int sw = i == 2 ? 0 : i + 1;
-                System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", i,i, ne, ne, sw, sw);
+
+                int neR = i > 0 ? (i) - 1 : 2;
+                int neC = 2 - i == 2 ? 0 : 2 - i + 1;
+
+                int swR = i == 2 ? 0 : i + 1;
+                int swC = 2 - i > 0 ? (2-i) - 1 : 2;
+
+                System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", tile.row, tile.column, neR, neC, swR, swC);
 
             }
 

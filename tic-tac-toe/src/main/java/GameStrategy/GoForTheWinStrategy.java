@@ -51,11 +51,11 @@ public class GoForTheWinStrategy implements GameStrategy{
             tile.column = i;
 
             if(board.isValidTurn(tile)) {
-                int ne = i > 0 ? i - 1 : 2;
-                int sw = i == 2 ? 0 : i + 1;
+                int nw = i > 0 ? i - 1 : 2;
+                int se = i == 2 ? 0 : i + 1;
 
-                if((board.getSign(ne, ne) == this.sign) &&
-                        (board.getSign(sw, sw) == this.sign)) {
+                if((board.getSign(nw, nw) == this.sign) &&
+                        (board.getSign(se, se) == this.sign)) {
                     solved = true;
                     return tile;
                 }
