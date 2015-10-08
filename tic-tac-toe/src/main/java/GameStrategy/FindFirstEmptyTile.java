@@ -14,6 +14,7 @@ public class FindFirstEmptyTile implements GameStrategy {
 
     public Turn execute() {
 
+        solved = false;
         Turn turn = new Turn();
 
         for(int i = 0; i < 3; i++){

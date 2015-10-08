@@ -16,6 +16,7 @@ public class GoForTheWinStrategy implements GameStrategy{
 
     public Turn execute() {
 
+        solved = false;
         Turn tile = new Turn();
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 3; j++) {
