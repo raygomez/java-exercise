@@ -63,7 +63,18 @@ public class TicTacToe
         System.out.print("Please select your sign [X or O]: ");
         Scanner userInput = new Scanner(System.in);
 
-        return userInput.next().charAt(0);
+        char sign;
+        while(true) {
+            String input = userInput.next();
+
+            if(input.length() == 1) {
+                sign = input.charAt(0);
+                if(sign == 'X' || sign == 'O' ) break;
+            }
+            System.out.print("Please select your sign [X or O]: ");
+        }
+
+        return sign;
     }
 
     private void initializeComputerPlayer() {
