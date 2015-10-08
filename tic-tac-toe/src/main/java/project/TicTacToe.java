@@ -16,8 +16,8 @@ public class TicTacToe
 
     public void start() {
 
-        initializePlayer1();
-        initializePlayer2();
+        initializeHumanPlayer();
+        initializeComputerPlayer();
 
         selectFirstPlayer();
 
@@ -50,7 +50,7 @@ public class TicTacToe
         System.out.format("%s is the first player.\n", currentPlayer.getName());
     }
 
-    private void initializePlayer1() {
+    private void initializeHumanPlayer() {
         Player p1 = new Player();
         p1.setStrategy(new HumanInputStrategy());
         getPreferredSign(p1);
@@ -65,7 +65,7 @@ public class TicTacToe
         p1.setSign(userInput.next().charAt(0));
     }
 
-    private void initializePlayer2() {
+    private void initializeComputerPlayer() {
         Player p2 = new Player();
         p2.setSign(getComputerSign());
         p2.setStrategy(new ComputerInputStrategy(board, p2.getSign()));
