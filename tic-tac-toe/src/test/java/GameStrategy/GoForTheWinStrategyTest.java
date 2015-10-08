@@ -83,30 +83,32 @@ public class GoForTheWinStrategyTest {
         assertEquals(1, result.column);
 
     }
+
+    @Test
+    public void testMiddleInOtherDiagonal(){
+        board.set('X', 0, 2);
+        board.set('X', 2, 0);
+
+        Turn result = strategy.execute();
+
+        assertTrue(strategy.isSolved());
+        assertEquals(1, result.row);
+        assertEquals(1, result.column);
+
+    }
+
     @Test
     public void f(){
 
-
-        //0,2 : 1,1 : 2,0
         Turn tile = new Turn();
         for(int i = 0; i < 3; i++) {
             tile.row = i;
             tile.column = 2 - i;
 
-            if(board.isValidTurn(tile)) {
-
-                int row = tile.row;
-                int col = tile.column;
-
-                int neR = row > 0 ? row - 1 : 2;
-                int neC = col == 2 ? 0 : col + 1;
-
-                int swR = row == 2 ? 0 : row + 1;
-                int swC = col > 0 ? col - 1 : 2;
-
-                System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", tile.row, tile.column, neR, neC, swR, swC);
-
-            }
+//            if(board.isValidTurn(tile)) {
+//                System.out.format("(%d,%d):(%d,%d),(%d,%d)\n", tile.row, tile.column, neR, neC, swR, swC);
+//
+//            }
 
         }
     }

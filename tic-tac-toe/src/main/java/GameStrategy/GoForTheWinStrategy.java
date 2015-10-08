@@ -60,6 +60,28 @@ public class GoForTheWinStrategy implements GameStrategy{
                     return tile;
                 }
             }
+
+
+            tile.row = i;
+            tile.column = 2 - i;
+
+            if(board.isValidTurn(tile)) {
+                int row = tile.row;
+                int col = tile.column;
+
+                int neR = row > 0 ? row - 1 : 2;
+                int neC = col == 2 ? 0 : col + 1;
+
+                int swR = row == 2 ? 0 : row + 1;
+                int swC = col > 0 ? col - 1 : 2;
+
+                if((board.getSign(neR, neC) == this.sign) &&
+                        (board.getSign(swR, swC) == this.sign)) {
+                    solved = true;
+                    return tile;
+                }
+            }
+
         }
 
         return null;
